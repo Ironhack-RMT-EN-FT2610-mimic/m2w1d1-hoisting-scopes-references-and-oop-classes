@@ -36,4 +36,28 @@ console.log( hero3Obj.turnEvil() )
 console.log(hero3Obj) 
 
 
+// Subclass
+class Superhero extends Hero {
 
+  constructor(name, secretIdentity, superpower) {
+    super(name, secretIdentity) // receive parameters used by the parent class for properties and sends it to the parent class.
+
+    // properties of superheroes
+    this.superpower = superpower
+  }
+
+  // methods of superheroes
+  userSuperpower(target) {
+    let message = `${this.name} is using ${this.superpower} on ${target.name}`
+    return message
+  }
+}
+
+let superhero1Obj = new Superhero("Spider-man", "Peter Parker", "throw web attack")
+console.log(superhero1Obj)
+console.log(superhero1Obj.revealSecretIdentity())
+
+let superhero2Obj = new Superhero("Deadpool", "Ryan Reynolds", "regenerate damage")
+console.log(superhero2Obj)
+
+console.log(superhero1Obj.userSuperpower(superhero2Obj))
